@@ -30,7 +30,7 @@ exports.get_one  = function(req,res){
 };
 
 exports.list = function(req, res){
-  mongodriver.findAll('notes', function(error, docs){
+  mongodriver.findAndOrder('notes', function(error, docs){
       res.render('notes', {
           title: 'FeigDev - note',
           notes:docs
