@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Authentication Required
+  form( method="post" )
+    div
+      div
+        | username :
+        br
+        input(type="text", name="user", id="loginUser")
+      div
+        | password :
+        br
+        input(type="password", name="pass", id="loginPass")
+      div#loginSubmit
+        input(type="submit", value="Send")

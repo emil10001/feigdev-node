@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  #projects
+    - each project in projects
+      div.project
+        p
+        div.created_at= project.created_at
+        div.title
+            a(href="/projects/"+project.id)!= project.title
+        div.banner
+            img(src=project.picture, height='150px')
+        div.description!= project.description

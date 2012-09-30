@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  #note
+    div.created_at= note.created_at
+    div.title= note.title
+    div.body!= note.body

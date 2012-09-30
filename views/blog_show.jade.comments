@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1= title
+  div.blog
+    div.created_at= blog.created_at
+    div.title= blog.title
+    div.above_fold= blog.above_fold
+    div.below_fold= blog.below_fold
+    - each comment in blog.comments
+      div.comment
+        div.person= comment.person
+        div.comment= comment.comment
+    div
+      form( method="post", action="/blog/addComment")
+        input( type="hidden", name="_id", value=blog._id.toHexString())
+        div
+          span Author :
+          input( type="text", name="person", id="addCommentPerson")
+        div
+          span Comment :
+          textarea( name="comment", rows=5, id="addCommentComment")
+        div#editblogSubmit
+          input(type="submit", value="Send")

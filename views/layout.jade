@@ -1,0 +1,16 @@
+!!!5
+html
+  head
+    title #{title} - FeigDev
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header
+      h1 
+        a(href="/")= "FeigDev"
+    .container
+      .main-content
+        block content
+      .sidebar
+        block sidebar
+    footer
+      p Running on node with Express, Jade and Stylus

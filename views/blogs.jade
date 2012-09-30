@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  #blogs
+    - each blog in blogs
+      div.blog
+        p
+        div.created_at= blog.created_at
+        div.title
+            a(href="/blogs/"+blog.id)!= blog.title
+        div.img
+            img(src=blog.image_url, height='150px')
+        div.body!= blog.above_fold

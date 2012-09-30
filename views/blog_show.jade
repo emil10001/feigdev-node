@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  div.blog
+    div.created_at= blog.created_at
+    div.title= blog.title
+    div.banner
+      img(src=blog.image_url, height='150')
+    div.above_fold!= blog.above_fold
+    p
+    div.below_fold!= blog.below_fold

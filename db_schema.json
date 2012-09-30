@@ -1,0 +1,31 @@
+// the following describes the collections and fields used in this project
+
+{
+  blogs: {
+    _id: 0x,
+    id: 0,
+    title: '',
+    banner_image: '',
+    above_fold: '',
+    below_fold: '',
+    image_url: ''
+    created_at: new Date()
+  },
+  projects: {
+    _id: 0x,
+    id: 0,
+    title: '',
+    banner_image: '',
+    description: '',
+    timeframe: '',
+    role: '',
+    created_at: new Date()
+  },
+  notes: {
+    _id: 0x,
+    id: 0,
+    title: '',
+    body: '',
+    created_at: new Date()
+  },
+}
