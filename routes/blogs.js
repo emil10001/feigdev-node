@@ -43,7 +43,7 @@ exports.post_comment  = function(req,res){
 exports.list = function(req, res){
   mongodriver.findAndOrder('blogs', function(error, docs){
       res.render('blogs', {
-          title: 'FeigDev - Blog',
+          title: 'Blog',
           blogs:docs
       });
    });

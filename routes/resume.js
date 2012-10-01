@@ -4,5 +4,5 @@
  */
 
 exports.list = function(req, res){
-  res.render('resume', { title: 'FeigDev - Résumé' })
+  res.render('resume', { title: 'Résumé' })
 };

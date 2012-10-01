@@ -6,9 +6,13 @@ block content
     - each project in projects
       div.project
         p
-        div.created_at= project.created_at
         div.title
+          b
+            | $
             a(href="/projects/"+project.id)!= project.title
+            |  | 
+            text= project.created_at
+        p
         div.banner
             img(src=project.picture, height='150px')
         div.description!= project.description

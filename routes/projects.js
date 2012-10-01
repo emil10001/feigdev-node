@@ -32,7 +32,7 @@ exports.get_one  = function(req,res){
 exports.list = function(req, res){
   mongodriver.findAndOrder('projects', function(error, docs){
       res.render('projects', {
-          title: 'FeigDev - project',
+          title: 'Projects',
           projects:docs
       });
    });

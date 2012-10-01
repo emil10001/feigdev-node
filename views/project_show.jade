@@ -4,8 +4,6 @@ block content
   h1= title
   div.project
     div.created_at= project.created_at
-    div.title
-      a(href="/project/"+project.id)!= project.title
     div.banner
       img(src=project.picture, height='150px')
     p
@@ -13,4 +11,4 @@ block content
     p
     div.timeframe= project.timeframe
     p
-    div.role= project.role
+    div.role!= project.role
