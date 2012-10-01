@@ -1,3 +1,5 @@
 {
-  "database_name" : "test"
+  "server_name" : "test",
+  "database_name" : "test-db",
+  "cookie_secret" : "mash keyboard here"
 }

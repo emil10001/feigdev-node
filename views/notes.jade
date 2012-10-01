@@ -6,7 +6,11 @@ block content
     - each note in notes
       div.note
         p
-        div.created_at= note.created_at
         div.title
+          b
+            | #
             a(href="/notes/"+note.id)!= note.title
+          |  | 
+          text!= note.created_at
+        p
         div.body!= note.body

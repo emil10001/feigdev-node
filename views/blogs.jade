@@ -6,9 +6,13 @@ block content
     - each blog in blogs
       div.blog
         p
-        div.created_at= blog.created_at
         div.title
+          b
+            | ~
             a(href="/blogs/"+blog.id)!= blog.title
+            |  | 
+            text= blog.created_at
+        p
         div.img
             img(src=blog.image_url, height='150px')
         div.body!= blog.above_fold

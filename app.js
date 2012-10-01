@@ -15,7 +15,10 @@ var express = require('express')
   , stylus = require('stylus')
   , nib = require('nib')
   , http = require('http')
-  , path = require('path');
+  , passport = require('passport')
+  , path = require('path')
+  , daemon = require('daemon')
+  , config = require('./config.json');
 
 var app = express();
 
@@ -23,16 +26,30 @@ function compile(str,path){
   return stylus(str).set('filename',path).use(nib());
 }
 
+// http://stackoverflow.com/a/11632909/974800
+daemon.daemonize({
+    stdout: '/var/log/nodejs/'+ config.server_name + '.log',
+    stderr: '/var/log/nodejs/'+ config.server_name + '.error.log'
+  }, './node.pid', function(err, pid) {
+    if (err) {
+      console.log('error starting daemon: ', err);
+      return process.exit(-1);
+    }
+    console.log('daemon started with pid: ' + pid);
+});
+
 app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || 13231);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
-  app.use(express.cookieParser('your secret here'));
+  app.use(express.cookieParser(config.cookie_secret));
   app.use(express.session());
+  //app.use(passport.initiailize());
+  //app.use(passport.session());
   app.use(app.router);
   app.use(stylus.middleware({src: __dirname + '/public',compile: compile}));
   app.use(express.static(path.join(__dirname, 'public')));
