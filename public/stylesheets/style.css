@@ -104,7 +104,11 @@ a img {
  * background color as variables
  */
 body {
+<<<<<<< HEAD
   font-family: 'Helvetica';
+=======
+  font-family: 'Georgia';
+>>>>>>> 8a542e0f2638bee7337b9ea967ec3c641b026873
   background-color: #fffdec;
   color: #444;
 }
