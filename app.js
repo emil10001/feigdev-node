@@ -28,8 +28,8 @@ function compile(str,path){
 
 // http://stackoverflow.com/a/11632909/974800
 daemon.daemonize({
-    stdout: '/var/log/nodejs/'+ config.server_name + '.log',
-    stderr: '/var/log/nodejs/'+ config.server_name + '.error.log'
+    stdout: './'+ config.server_name + '.log',
+    stderr: './'+ config.server_name + '.error.log'
   }, './node.pid', function(err, pid) {
     if (err) {
       console.log('error starting daemon: ', err);
@@ -39,7 +39,7 @@ daemon.daemonize({
 });
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 13231);
+  app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());

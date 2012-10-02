@@ -104,7 +104,7 @@ a img {
  * background color as variables
  */
 body {
-  font-family: 'Georgia';
+  font-family: 'Helvetica';
   background-color: #fffdec;
   color: #444;
 }
@@ -125,6 +125,12 @@ header {
 #homes {
   font-family: 'Quicksand';
   font-size: 6em;
+}
+#accordion h3 a {
+  font-family: 'Quicksand';
+  font-size: 4em;
+  color: #000;
+  text-decoration: none;
 }
 .container {
   width: 500px;
